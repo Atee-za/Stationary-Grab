@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ItemRepositoryTest {
 
     private static ItemRepository repository = ItemRepository.getItemRepository();
-    private Item book = ItemFactory.createItem("Advance SQL", "Cover all SQL skills needed in the industry",
+    private static Item book = ItemFactory.createItem("Advance SQL", "Cover all SQL skills needed in the industry",
             "Good",856.7);
     @Test
     void a_create() {
@@ -22,7 +22,7 @@ class ItemRepositoryTest {
 
     @Test
     void b_read() {
-        assertEquals("Advanced SQl", repository.read(book.getItemId()));
+        assertEquals(856.7, repository.read(book.getItemId()).getItemPrice());
     }
 
     @Test
